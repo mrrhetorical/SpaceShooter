@@ -193,7 +193,11 @@ public class Player : MonoBehaviour
 	{
 		if (!Invincible)
 		{
-			StartCoroutine(UpdateHealthDisplay(_health));
+			for (var i = _health; i > _health - damage; i--)
+			{
+				StartCoroutine(UpdateHealthDisplay(i));
+			}
+
 			_health -= damage;
 			
 			
