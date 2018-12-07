@@ -165,6 +165,11 @@ Prefab:
     - target: {fileID: 114584913160511506, guid: 03849c6d5e6434689a3a9e14fc2890eb,
         type: 2}
       propertyPath: _menuScene
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114584913160511506, guid: 03849c6d5e6434689a3a9e14fc2890eb,
+        type: 2}
+      propertyPath: _gameScene
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -199,8 +204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ba7e3d40624ce780b1732db64ff385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameScene: 0
-  _menuScene: 1
+  _gameScene: 1
+  _menuScene: 0
   _gameOverObject: {fileID: 996797795}
   _gameOverScore: {fileID: 455294578}
 --- !u!4 &173578410

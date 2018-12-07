@@ -53,4 +53,9 @@ public class MenuManager : MonoBehaviour
         SceneManager.UnloadSceneAsync(_menuScene);
         SceneManager.LoadScene(_gameScene);
     }
+
+    public void QuitToDesktop()
+    {
+        Application.Quit();
+    }
 }
