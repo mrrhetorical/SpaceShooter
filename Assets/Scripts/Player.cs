@@ -191,28 +191,31 @@ public class Player : MonoBehaviour
 
 	public void Damage(int damage)
 	{
-		if (!Invincible)
+		if (Invincible)
+			return;
+		
+		for (var i = _health; i > _health - damage; i--)
 		{
-			for (var i = _health; i > _health - damage; i--)
+			if (i > 0)
 			{
 				StartCoroutine(UpdateHealthDisplay(i));
 			}
+		}
 
-			_health -= damage;
+		_health -= damage;
 			
 			
 
-			if (_health < 1)
-			{
-				_running = false;
-				MenuManager.Singleton.EnableGameOverMenu();
-			}
+		if (_health < 1)
+		{
+			_running = false;
+			MenuManager.Singleton.EnableGameOverMenu();
 		}
 	}
 
 	public void AddHeart()
 	{
-		if (_health < 3)
+		if (_health <= 3)
 		{
 			_health++;
 			StartCoroutine(UpdateHealthDisplay(_health));
@@ -257,6 +260,11 @@ public class Player : MonoBehaviour
 		{
 			Destroy(other.gameObject);
 			Damage(2);
+		}
+
+		if (other.CompareTag("BossBomb"))
+		{
+			Damage(3);
 		}
 	}
 }

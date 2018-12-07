@@ -5,13 +5,13 @@ using Random = UnityEngine.Random;
 public class ShootingEnemy : Enemy
 {
 
-    [SerializeField] private GameObject _bulletPrefab;
-    [SerializeField] private Vector2 _shootDelay;
-    [SerializeField] private float _bulletSpeed = 2f;
+    [SerializeField] protected GameObject _bulletPrefab;
+    [SerializeField] protected Vector2 _shootDelay;
+    [SerializeField] protected float _bulletSpeed = 2f;
     [SerializeField] private float _spinChance = 5f;
-    private bool _alive = true;
+    protected bool _alive = true;
 
-    [SerializeField] private int _bulletCount = 0;
+    [SerializeField] protected int _bulletCount = 0;
     
     public override void Start()
     {
@@ -31,7 +31,7 @@ public class ShootingEnemy : Enemy
         base.Update();
     }
 
-    private IEnumerator ShootBullets()
+    protected virtual IEnumerator ShootBullets()
     {
         var first = Random.Range(_shootDelay.x, _shootDelay.y);
         yield return new WaitForSeconds(first);
@@ -45,7 +45,7 @@ public class ShootingEnemy : Enemy
         }
     }
     
-    private IEnumerator ApplyBulletForce(GameObject bullet)
+    protected IEnumerator ApplyBulletForce(GameObject bullet)
     {
 	
         while (bullet != null && bullet.transform.position.y > -8f)

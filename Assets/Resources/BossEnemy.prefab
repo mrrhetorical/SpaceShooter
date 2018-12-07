@@ -103,13 +103,19 @@ MonoBehaviour:
   _verticalSpeed: {x: 0.2, y: 0.5}
   _speed: {x: 0, y: 0}
   _health: 25
-  _minTimeBetweenChanges: 0.4
-  _bulletPrefab: {fileID: 1375662384105274, guid: f8b90aafeb1b240ac833ed2c09e4282f,
+  _minTimeBetweenChanges: 0.25
+  _bulletPrefab: {fileID: 1375662384105274, guid: 681aa1f9aceec4c58851ab16d9f7cf7d,
     type: 2}
-  _shootDelay: {x: 1, y: 3}
+  _shootDelay: {x: 0.2, y: 1}
   _bulletSpeed: 4
   _spinChance: 0.05
   _bulletCount: 0
+  _bombPrefab: {fileID: 1269453253121938, guid: 47767352ab5d640c39e7e4d43f7eab54,
+    type: 2}
+  _bossBulletPrefab: {fileID: 1375662384105274, guid: f8b90aafeb1b240ac833ed2c09e4282f,
+    type: 2}
+  _bombTimer: 2
+  _bombSpeed: 3
 --- !u!212 &212160479805149382
 SpriteRenderer:
   m_ObjectHideFlags: 1

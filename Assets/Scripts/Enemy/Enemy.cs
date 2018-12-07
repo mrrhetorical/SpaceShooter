@@ -65,10 +65,10 @@ public class Enemy : MonoBehaviour
             move *= Time.deltaTime;
             transform.Translate(move);
 
-            if (transform.position.y > 4.95f)
+            if (transform.position.y > 4.23f)
             {
                 var pos = transform.position;
-                pos.y = 4.95f;
+                pos.y = 4.23f;
                 transform.position = pos;
             }
         }
