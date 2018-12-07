@@ -57,7 +57,7 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
-            if (Player.Singleton.PlayerScore < 10 /*&& Player.Singleton.PlayerScore % 60 <= _maxTimeToSpawn */ && !BossSpawned)
+            if (Player.Singleton.PlayerScore > 10 && Player.Singleton.PlayerScore % 60 <= _maxTimeToSpawn && !BossSpawned)
             {
                 var spawnPos = Vector3.zero;
                 var x = Random.Range(_horizScreenBounds.x, _horizScreenBounds.y);
