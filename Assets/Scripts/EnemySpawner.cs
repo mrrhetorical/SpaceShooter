@@ -82,7 +82,7 @@ public class EnemySpawner : MonoBehaviour
                     spawnPos.y = y;
 
                     StartCoroutine(SpawnEnemyWithWarning(_bossPrefab, spawnPos));
-
+                    
                     BossSpawned = true;
                 }
 

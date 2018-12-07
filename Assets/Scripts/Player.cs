@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -19,7 +20,8 @@ public class Player : MonoBehaviour
 	[SerializeField] private Image _heatFillImage;
 
 	[SerializeField] private int _health;
-	[SerializeField] public bool Invincible = false;
+	[SerializeField] public bool Invincible;
+	[SerializeField] public bool TakingDamage;
 
 	public bool GameRunning = true;
 	[SerializeField] public int PlayerScore = 0;
@@ -198,7 +200,7 @@ public class Player : MonoBehaviour
 
 	public void Damage(int damage)
 	{
-		if (Invincible)
+		if (Invincible || TakingDamage)
 			return;
 		
 		for (var i = _health; i > _health - damage; i--)
@@ -239,7 +241,7 @@ public class Player : MonoBehaviour
 
 	private IEnumerator UpdateHealthDisplay(int heartToDamage)
 	{
-		Invincible = true;
+		TakingDamage = true;
 		
 		var heart = _interfaceHearts[heartToDamage - 1];
 		var heartRenderer = heart.GetComponent<SpriteRenderer>();
@@ -259,7 +261,7 @@ public class Player : MonoBehaviour
 			heartRenderer.enabled = false;
 		}
 
-		Invincible = false;
+		TakingDamage = false;
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)

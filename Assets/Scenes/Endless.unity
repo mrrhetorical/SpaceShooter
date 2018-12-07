@@ -1795,11 +1795,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114520511851444784, guid: 79256a690b2724bdcbac36c139f4a35f,
-        type: 2}
-      propertyPath: _interfaceHearts.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4619043035517710, guid: 79256a690b2724bdcbac36c139f4a35f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1849,6 +1844,11 @@ Prefab:
       objectReference: {fileID: 1881179867}
     - target: {fileID: 114520511851444784, guid: 79256a690b2724bdcbac36c139f4a35f,
         type: 2}
+      propertyPath: _interfaceHearts.Array.data[3]
+      value: 
+      objectReference: {fileID: 412215564}
+    - target: {fileID: 114520511851444784, guid: 79256a690b2724bdcbac36c139f4a35f,
+        type: 2}
       propertyPath: _heatSlider
       value: 
       objectReference: {fileID: 451630204}
@@ -1862,21 +1862,6 @@ Prefab:
       propertyPath: _scoreText
       value: 
       objectReference: {fileID: 1821892420}
-    - target: {fileID: 114520511851444784, guid: 79256a690b2724bdcbac36c139f4a35f,
-        type: 2}
-      propertyPath: _interfaceHearts.Array.data[3]
-      value: 
-      objectReference: {fileID: 412215564}
-    - target: {fileID: 114520511851444784, guid: 79256a690b2724bdcbac36c139f4a35f,
-        type: 2}
-      propertyPath: PlayerScore
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114520511851444784, guid: 79256a690b2724bdcbac36c139f4a35f,
-        type: 2}
-      propertyPath: GameRunning
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79256a690b2724bdcbac36c139f4a35f, type: 2}
   m_IsPrefabAsset: 0

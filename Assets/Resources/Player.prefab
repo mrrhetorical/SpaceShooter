@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edeb7b6c813f2452aa3bd37f00f3ecd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isForMenu: 0
   _bulletPrefab: {fileID: 1375662384105274, guid: 4501ecf4b6841421b8b16562a1b7fafa,
     type: 2}
   _shipSpeed: 5
@@ -107,10 +108,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   _heatSlider: {fileID: 0}
   _heatFillImage: {fileID: 0}
   _health: 0
   Invincible: 0
+  TakingDamage: 0
+  GameRunning: 1
   PlayerScore: 0
   _scoreText: {fileID: 0}
   FireRate: 0.2

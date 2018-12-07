@@ -108,6 +108,13 @@ public class Enemy : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+            else
+            {
+                if (!Player.Singleton.TakingDamage && Player.Singleton.Invincible)
+                {
+                    StartCoroutine(TakeDamage());
+                }
+            }
         }
     }
 

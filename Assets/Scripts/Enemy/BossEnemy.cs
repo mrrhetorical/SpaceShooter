@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Security.Policy;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -20,7 +18,23 @@ public class BossEnemy : ShootingEnemy
 
     public override void BaseKill()
     {
-        EnemySpawner.Singleton.BossSpawned = false;
+        var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        var found = false;
+        
+        foreach (var enemy in enemies)
+        {
+            if (enemy == gameObject)
+                continue;
+            
+            if (enemy.GetComponent<BossEnemy>())
+            {
+                found = true;
+                break;
+            }
+        }
+
+
+        EnemySpawner.Singleton.BossSpawned = found;
         base.BaseKill();
     }
     
@@ -108,7 +122,9 @@ public class BossEnemy : ShootingEnemy
 
         var traveled = 0f;
 
-        while (traveled < 4f)
+        var distance = Random.Range(2.5f, 6f);
+
+        while (traveled < distance)
         {
             var move = Vector3.zero;
             move.y = _bombSpeed * -1f;
