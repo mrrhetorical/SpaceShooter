@@ -17,6 +17,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Vector2 _vertiScreenBounds = Vector2.zero;
     
     [SerializeField] public bool BossSpawned = false;
+
+    [SerializeField] private int _bossesSpawned = 0;
     
     private float _timeSinceLastSpawn;
    
@@ -59,18 +61,25 @@ public class EnemySpawner : MonoBehaviour
         {
             if (Player.Singleton.PlayerScore > 10 && Player.Singleton.PlayerScore % 60 <= _maxTimeToSpawn && !BossSpawned)
             {
-                var spawnPos = Vector3.zero;
-                var x = Random.Range(_horizScreenBounds.x, _horizScreenBounds.y);
-                var y = Random.Range(_vertiScreenBounds.x, _vertiScreenBounds.y);
-                spawnPos.x = x;
-                spawnPos.y = y;
                 
-                Instantiate(_bossPrefab, spawnPos, Quaternion.identity, null);
+                for (var i = 0; i < _bossesSpawned + 1; i++)
+                {
+                    var spawnPos = Vector3.zero;
+                    var x = Random.Range(_horizScreenBounds.x, _horizScreenBounds.y);
+                    var y = Random.Range(_vertiScreenBounds.x, _vertiScreenBounds.y);
+                    spawnPos.x = x;
+                    spawnPos.y = y;
 
-                BossSpawned = true;
+                    Instantiate(_bossPrefab, spawnPos, Quaternion.identity, null);
+
+                    BossSpawned = true;
+                }
+
+                _bossesSpawned++;
             }
 
             if (!BossSpawned)
+
             {
                 var spawnPos = Vector3.zero;
                 var x = Random.Range(_horizScreenBounds.x, _horizScreenBounds.y);

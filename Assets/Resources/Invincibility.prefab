@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b60233e761441cb822c46514fb21eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _despawnTime: 10
   InvincibilityTime: 10
 --- !u!212 &212227425799930268
 SpriteRenderer:
@@ -136,7 +137,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e598caf2a82c945e5924381b8c2a99ec, type: 3}
-  m_Color: {r: 1, g: 0.9144602, b: 0.023584902, a: 1}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

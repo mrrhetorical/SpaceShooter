@@ -9,7 +9,6 @@ public class BossEnemy : ShootingEnemy
 
     [SerializeField] private GameObject _bombPrefab;
     [SerializeField] private GameObject _bossBulletPrefab;
-    [SerializeField] private float _bombTimer = 3f;
     [SerializeField] private float _bombSpeed = 2f;
     
     public override void Start()
@@ -109,7 +108,7 @@ public class BossEnemy : ShootingEnemy
 
         var traveled = 0f;
 
-        while (traveled < 3.5f)
+        while (traveled < 4f)
         {
             var move = Vector3.zero;
             move.y = _bombSpeed * -1f;
@@ -120,13 +119,17 @@ public class BossEnemy : ShootingEnemy
             yield return null;
         }
 
-        yield return new WaitForSeconds(_bombTimer);
-
         bomb.GetComponent<SpriteRenderer>().color = Color.yellow;
+        yield return new WaitForSeconds(0.1f);
         var scale = bomb.transform.localScale;
         scale *= 6;
         bomb.transform.localScale = scale;
-        yield return new WaitForSeconds(0.8f);
+        bomb.GetComponent<SpriteRenderer>().color = new Color(1, 0.5f, 0, 1);
+        yield return new WaitForSeconds(0.2f);
+        scale /= 3;
+        bomb.transform.localScale = scale;
+        bomb.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
+        yield return new WaitForSeconds(0.1f);
         Destroy(bomb);
         _bulletCount--;
     }

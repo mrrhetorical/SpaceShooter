@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
@@ -11,7 +12,8 @@ public class Player : MonoBehaviour
 {
 
 	public static Player Singleton;
-	
+
+	[SerializeField] private bool _isForMenu = false;
 	[SerializeField] private GameObject _bulletPrefab;
 	[SerializeField] private float _shipSpeed = 2f;
 	[SerializeField] private float _bulletSpeed = 5f;
@@ -45,6 +47,9 @@ public class Player : MonoBehaviour
 
 		Singleton = this;
 
+		if (_isForMenu)
+			return;
+		
 		if (_bulletPrefab == null)
 		{
 			Debug.LogError("The bullet prefab is not set up!");
@@ -57,6 +62,9 @@ public class Player : MonoBehaviour
 
 	private void Update()
 	{
+		if (_isForMenu)
+			return;
+		
 		if (transform.position.x > 8.8f)
 		{
 			var pos = transform.position;

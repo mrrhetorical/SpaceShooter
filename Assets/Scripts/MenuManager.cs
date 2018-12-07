@@ -14,6 +14,10 @@ public class MenuManager : MonoBehaviour
     [Header("Game Over Settings")]
     [SerializeField] private GameObject _gameOverObject;
     [SerializeField] private Text _gameOverScore;
+
+    [Header("Main Menu Stuff")]
+    [SerializeField] private GameObject _menuHolder;
+    [SerializeField] private GameObject _infoHolder;
     
     private void Start()
     {
@@ -29,6 +33,7 @@ public class MenuManager : MonoBehaviour
     public void EnableGameOverMenu()
     {
         Time.timeScale = 0f;
+        Cursor.visible = true;
         _gameOverObject.SetActive(true);
         _gameOverScore.text = Player.Singleton.PlayerScore + "";
     }
@@ -36,6 +41,7 @@ public class MenuManager : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f;
+        Cursor.visible = false;
         SceneManager.UnloadSceneAsync(_gameScene);
         SceneManager.LoadScene(_gameScene);
     }
@@ -43,6 +49,7 @@ public class MenuManager : MonoBehaviour
     public void ToMainMenu()
     {
         Time.timeScale = 1f;
+        Cursor.visible = true;
         SceneManager.UnloadSceneAsync(_gameScene);
         SceneManager.LoadScene(_menuScene);
     }
@@ -50,6 +57,7 @@ public class MenuManager : MonoBehaviour
     public void ToGameScene()
     {
         Time.timeScale = 1f;
+        Cursor.visible = false;
         SceneManager.UnloadSceneAsync(_menuScene);
         SceneManager.LoadScene(_gameScene);
     }
@@ -57,5 +65,11 @@ public class MenuManager : MonoBehaviour
     public void QuitToDesktop()
     {
         Application.Quit();
+    }
+
+    public void ToggleGameInfo(bool toggleInfo)
+    {
+        _menuHolder.SetActive(!toggleInfo);
+        _infoHolder.SetActive(toggleInfo);
     }
 }
