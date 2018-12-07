@@ -14,6 +14,7 @@ public class MenuManager : MonoBehaviour
     [Header("Game Over Settings")]
     [SerializeField] private GameObject _gameOverObject;
     [SerializeField] private Text _gameOverScore;
+    [SerializeField] public Text GameOverMessage;
 
     [Header("Main Menu Stuff")]
     [SerializeField] private GameObject _menuHolder;
@@ -40,17 +41,18 @@ public class MenuManager : MonoBehaviour
 
     public void RestartGame()
     {
+        var scene = SceneManager.GetActiveScene();
         Time.timeScale = 1f;
         Cursor.visible = false;
-        SceneManager.UnloadSceneAsync(_gameScene);
-        SceneManager.LoadScene(_gameScene);
+        SceneManager.UnloadSceneAsync(scene.buildIndex);
+        SceneManager.LoadScene(scene.buildIndex);
     }
 
     public void ToMainMenu()
     {
         Time.timeScale = 1f;
         Cursor.visible = true;
-        SceneManager.UnloadSceneAsync(_gameScene);
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene(_menuScene);
     }
 

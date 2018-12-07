@@ -9,6 +9,7 @@ TagManager:
   - EnemyBullet
   - BossBullet
   - BossBomb
+  - Enemy
   layers:
   - Default
   - TransparentFX

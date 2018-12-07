@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50462678206705680}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   _verticalSpeed: {x: 0.2, y: 0.5}
   _speed: {x: 0, y: 0}
   _health: 1
+  _minTimeBetweenChanges: 0.4
 --- !u!212 &212160479805149382
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -208,6 +208,9 @@ MonoBehaviour:
   _menuScene: 0
   _gameOverObject: {fileID: 996797795}
   _gameOverScore: {fileID: 455294578}
+  GameOverMessage: {fileID: 0}
+  _menuHolder: {fileID: 0}
+  _infoHolder: {fileID: 0}
 --- !u!4 &173578410
 Transform:
   m_ObjectHideFlags: 0
@@ -1364,7 +1367,10 @@ MonoBehaviour:
   _maxTimeToSpawn: 3
   _horizScreenBounds: {x: -8.5, y: 8.5}
   _vertiScreenBounds: {x: 0, y: 5}
+  _spawnWarning: {fileID: 1234073788440562, guid: f8ad48557c5b347358252e318cf5e82c,
+    type: 2}
   BossSpawned: 0
+  _bossesSpawned: 0
 --- !u!4 &1168534733
 Transform:
   m_ObjectHideFlags: 0
@@ -1861,6 +1867,16 @@ Prefab:
       propertyPath: _interfaceHearts.Array.data[3]
       value: 
       objectReference: {fileID: 412215564}
+    - target: {fileID: 114520511851444784, guid: 79256a690b2724bdcbac36c139f4a35f,
+        type: 2}
+      propertyPath: PlayerScore
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114520511851444784, guid: 79256a690b2724bdcbac36c139f4a35f,
+        type: 2}
+      propertyPath: GameRunning
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79256a690b2724bdcbac36c139f4a35f, type: 2}
   m_IsPrefabAsset: 0

@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50462678206705680}
   m_Layer: 0
   m_Name: BossEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +114,6 @@ MonoBehaviour:
     type: 2}
   _bossBulletPrefab: {fileID: 1375662384105274, guid: f8b90aafeb1b240ac833ed2c09e4282f,
     type: 2}
-  _bombTimer: 2
   _bombSpeed: 3
 --- !u!212 &212160479805149382
 SpriteRenderer:

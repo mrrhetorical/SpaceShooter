@@ -11,6 +11,7 @@
             <e p="ShootingEnemy.cs" t="Include" />
           </e>
           <e p="EnemySpawner.cs" t="Include" />
+          <e p="LevelManager.cs" t="Include" />
           <e p="MenuManager.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="Powerups" t="Include">

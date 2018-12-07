@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using UnityEngine;
-using UnityEngine.Networking;
-using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -26,7 +21,7 @@ public class Player : MonoBehaviour
 	[SerializeField] private int _health;
 	[SerializeField] public bool Invincible = false;
 
-	private bool _running = true;
+	public bool GameRunning = true;
 	[SerializeField] public int PlayerScore = 0;
 	[SerializeField] private Text _scoreText;
 
@@ -167,11 +162,15 @@ public class Player : MonoBehaviour
 
 	private IEnumerator RunScore()
 	{
-		while (_running)
+		while (GameRunning)
 		{
 			yield return new WaitForSeconds(1.0f);
-			PlayerScore++;
-			_scoreText.text = PlayerScore + "";
+			if (!EnemySpawner.Singleton || !EnemySpawner.Singleton.BossSpawned)
+			{
+				PlayerScore++;
+				_scoreText.text = PlayerScore + "";
+			}
+			
 		}
 	}
 
@@ -211,12 +210,14 @@ public class Player : MonoBehaviour
 		}
 
 		_health -= damage;
+
+		GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
 			
 			
 
 		if (_health < 1)
 		{
-			_running = false;
+			GameRunning = false;
 			MenuManager.Singleton.EnableGameOverMenu();
 		}
 	}
@@ -226,6 +227,11 @@ public class Player : MonoBehaviour
 		if (_health <= 3)
 		{
 			_health++;
+			if (_health == 4)
+			{
+				GetComponent<SpriteRenderer>().color = new Color(0, 0.5f, 1f, 1);
+			}
+
 			StartCoroutine(UpdateHealthDisplay(_health));
 		}
 
