@@ -32,6 +32,11 @@ public class EnemySpawner : MonoBehaviour
             Destroy(this);
         }
 
+        if (_spawnWarning == null)
+        {
+            Debug.LogError("Spawn warning not yet set up!");
+        }
+
         Singleton = this;
 
         StartCoroutine(SpawnEnemies());
@@ -106,17 +111,8 @@ public class EnemySpawner : MonoBehaviour
                 spawnPos.x = x;
                 spawnPos.y = y;
 
-                GameObject prefab;
-
                 var chance = Random.Range(0, 100);
-                if (chance <= _shootingEnemySpawnChance)
-                {
-                    prefab = _shootingEnemyPrefab;
-                }
-                else
-                {
-                    prefab = _enemyPrefab;
-                }
+                var prefab = chance <= _shootingEnemySpawnChance ? _shootingEnemyPrefab : _enemyPrefab;
 
                 StartCoroutine(SpawnEnemyWithWarning(prefab, spawnPos));
             }

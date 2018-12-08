@@ -74,4 +74,11 @@ public class MenuManager : MonoBehaviour
         _menuHolder.SetActive(!toggleInfo);
         _infoHolder.SetActive(toggleInfo);
     }
+
+    public void LoadLevel(int level)
+    {
+        var scene = SceneManager.GetSceneByPath("Scenes/Level_" + level);
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        SceneManager.LoadSceneAsync(scene.buildIndex);
+    }
 }
