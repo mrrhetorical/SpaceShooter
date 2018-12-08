@@ -13,12 +13,13 @@ public class MenuManager : MonoBehaviour
     
     [Header("Game Over Settings")]
     [SerializeField] private GameObject _gameOverObject;
-    [SerializeField] private Text _gameOverScore;
+    [SerializeField] public Text GameOverScore;
     [SerializeField] public Text GameOverMessage;
 
     [Header("Main Menu Stuff")]
     [SerializeField] private GameObject _menuHolder;
     [SerializeField] private GameObject _infoHolder;
+    [SerializeField] private GameObject _levelSelectHolder;
     
     private void Start()
     {
@@ -36,15 +37,15 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 0f;
         Cursor.visible = true;
         _gameOverObject.SetActive(true);
-        _gameOverScore.text = Player.Singleton.PlayerScore + "";
+        GameOverScore.text = Player.Singleton.PlayerScore + "";
     }
 
     public void RestartGame()
     {
-        var scene = SceneManager.GetActiveScene();
         Time.timeScale = 1f;
+        var scene = SceneManager.GetActiveScene();
         Cursor.visible = false;
-        SceneManager.UnloadSceneAsync(scene.buildIndex);
+        SceneManager.UnloadSceneAsync(scene);
         SceneManager.LoadScene(scene.buildIndex);
     }
 
@@ -52,7 +53,7 @@ public class MenuManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         Cursor.visible = true;
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneManager.LoadScene(_menuScene);
     }
 
@@ -75,10 +76,18 @@ public class MenuManager : MonoBehaviour
         _infoHolder.SetActive(toggleInfo);
     }
 
+    public void ToggleLevelSelect(bool toggleInfo)
+    {
+        _menuHolder.SetActive(!toggleInfo);
+        _levelSelectHolder.SetActive(toggleInfo);
+    }
+
     public void LoadLevel(int level)
     {
-        var scene = SceneManager.GetSceneByPath("Scenes/Levels/Level_" + level);
+        Time.timeScale = 1f;
+        Cursor.visible = false;
+        var sceneName = "Level_" + level;
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-        SceneManager.LoadSceneAsync(scene.buildIndex);
+        SceneManager.LoadScene(sceneName);
     }
 }

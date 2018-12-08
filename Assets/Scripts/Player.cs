@@ -44,6 +44,8 @@ public class Player : MonoBehaviour
 
 		Singleton = this;
 
+		Time.timeScale = 1f;
+		
 		if (_isForMenu)
 			return;
 		

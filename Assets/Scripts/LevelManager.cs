@@ -37,6 +37,7 @@ public class LevelManager : MonoBehaviour
     {
         MenuManager.Singleton.EnableGameOverMenu();
         MenuManager.Singleton.GameOverMessage.text = "You've completed the level!";
+        MenuManager.Singleton.GameOverScore.enabled = false;
     }
 
 }

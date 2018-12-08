@@ -232,68 +232,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &157612034
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4505650289577890, guid: 03849c6d5e6434689a3a9e14fc2890eb, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4505650289577890, guid: 03849c6d5e6434689a3a9e14fc2890eb, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4505650289577890, guid: 03849c6d5e6434689a3a9e14fc2890eb, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4505650289577890, guid: 03849c6d5e6434689a3a9e14fc2890eb, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4505650289577890, guid: 03849c6d5e6434689a3a9e14fc2890eb, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4505650289577890, guid: 03849c6d5e6434689a3a9e14fc2890eb, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4505650289577890, guid: 03849c6d5e6434689a3a9e14fc2890eb, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4505650289577890, guid: 03849c6d5e6434689a3a9e14fc2890eb, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114584913160511506, guid: 03849c6d5e6434689a3a9e14fc2890eb,
-        type: 2}
-      propertyPath: _gameOverObject
-      value: 
-      objectReference: {fileID: 996797795}
-    - target: {fileID: 114584913160511506, guid: 03849c6d5e6434689a3a9e14fc2890eb,
-        type: 2}
-      propertyPath: _gameOverScore
-      value: 
-      objectReference: {fileID: 455294578}
-    - target: {fileID: 114584913160511506, guid: 03849c6d5e6434689a3a9e14fc2890eb,
-        type: 2}
-      propertyPath: _menuScene
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114584913160511506, guid: 03849c6d5e6434689a3a9e14fc2890eb,
-        type: 2}
-      propertyPath: _gameScene
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 03849c6d5e6434689a3a9e14fc2890eb, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &168456430
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,56 +307,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &173578408
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1440800793138606, guid: 03849c6d5e6434689a3a9e14fc2890eb,
-    type: 2}
-  m_PrefabInternal: {fileID: 157612034}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 173578410}
-  - component: {fileID: 173578409}
-  m_Layer: 0
-  m_Name: MenuManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &173578409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114584913160511506, guid: 03849c6d5e6434689a3a9e14fc2890eb,
-    type: 2}
-  m_PrefabInternal: {fileID: 157612034}
-  m_GameObject: {fileID: 173578408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5ba7e3d40624ce780b1732db64ff385, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gameScene: 1
-  _menuScene: 0
-  _gameOverObject: {fileID: 996797795}
-  _gameOverScore: {fileID: 455294578}
-  GameOverMessage: {fileID: 0}
-  _menuHolder: {fileID: 0}
-  _infoHolder: {fileID: 0}
---- !u!4 &173578410
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4505650289577890, guid: 03849c6d5e6434689a3a9e14fc2890eb,
-    type: 2}
-  m_PrefabInternal: {fileID: 157612034}
-  m_GameObject: {fileID: 173578408}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &211767361
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,6 +451,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &336913195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 336913196}
+  - component: {fileID: 336913197}
+  m_Layer: 0
+  m_Name: MenuManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &336913196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 336913195}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &336913197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 336913195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ba7e3d40624ce780b1732db64ff385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameScene: 1
+  _menuScene: 0
+  _gameOverObject: {fileID: 996797795}
+  GameOverScore: {fileID: 638680012}
+  GameOverMessage: {fileID: 455294578}
+  _menuHolder: {fileID: 0}
+  _infoHolder: {fileID: 0}
 --- !u!1 &342519106
 GameObject:
   m_ObjectHideFlags: 0
@@ -2535,7 +2470,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 173578409}
+      - m_Target: {fileID: 336913197}
         m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
@@ -3504,7 +3439,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 173578409}
+      - m_Target: {fileID: 336913197}
         m_MethodName: ToMainMenu
         m_Mode: 1
         m_Arguments:

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
@@ -65,7 +66,7 @@ public class Enemy : MonoBehaviour
             move *= Time.deltaTime;
             transform.Translate(move);
 
-            if (transform.position.y > 4.23f)
+            if (transform.position.y > 4.23f && IsEndless())
             {
                 var pos = transform.position;
                 pos.y = 4.23f;
@@ -144,5 +145,10 @@ public class Enemy : MonoBehaviour
         }
         
         _damageImmune = false;
+    }
+
+    private static bool IsEndless()
+    {
+        return SceneManager.GetActiveScene().name.ToUpper() == "ENDLESS";
     }
 }
