@@ -494,10 +494,11 @@ MonoBehaviour:
   _gameScene: 1
   _menuScene: 0
   _gameOverObject: {fileID: 996797795}
-  GameOverScore: {fileID: 638680012}
-  GameOverMessage: {fileID: 455294578}
+  GameOverScore: {fileID: 455294578}
+  GameOverMessage: {fileID: 638680012}
   _menuHolder: {fileID: 0}
   _infoHolder: {fileID: 0}
+  _levelSelectHolder: {fileID: 0}
 --- !u!1 &342519106
 GameObject:
   m_ObjectHideFlags: 0

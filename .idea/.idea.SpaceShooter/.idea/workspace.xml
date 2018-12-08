@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6990a23-1a25-4a26-a87d-db19ea348187" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Endless.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Endless.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -231,9 +224,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="88" />
-    <option name="y" value="82" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="190" />
+    <option name="y" value="120" />
     <option name="width" value="1440" />
     <option name="height" value="805" />
   </component>
@@ -326,12 +319,12 @@
       <workItem from="1544155066854" duration="8856000" />
       <workItem from="1544219768823" duration="4179000" />
       <workItem from="1544226144006" duration="79000" />
-      <workItem from="1544304166787" duration="3832000" />
+      <workItem from="1544304166787" duration="3949000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22270000" />
+    <option name="totallyTimeSpent" value="22387000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -343,7 +336,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="190" y="120" width="1440" height="805" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32959327" />
