@@ -77,7 +77,7 @@ public class MenuManager : MonoBehaviour
 
     public void LoadLevel(int level)
     {
-        var scene = SceneManager.GetSceneByPath("Scenes/Level_" + level);
+        var scene = SceneManager.GetSceneByPath("Scenes/Levels/Level_" + level);
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneManager.LoadSceneAsync(scene.buildIndex);
     }
