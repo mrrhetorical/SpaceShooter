@@ -26,8 +26,11 @@ public class BossEnemy : ShootingEnemy
         if (transform.position.x > Player.Singleton.transform.position.x)
         {
             movement.x *= -1f;
+        } else if (Mathf.Abs(transform.position.x - Player.Singleton.transform.position.x) <= 0.1)
+        {
+            movement.x = 0;
         }
-        
+
         transform.Translate(movement);
 
 //        base.Update();
