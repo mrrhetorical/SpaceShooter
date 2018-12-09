@@ -20,7 +20,7 @@
     <session id="-1715304668">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="1" />
@@ -124,8 +124,13 @@
       <file leaf-file-name="ShootingEnemy.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/ShootingEnemy.cs">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="38">
               <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+=======
+            <state relative-caret-position="477">
+              <caret line="45" column="31" lean-forward="true" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+>>>>>>> Stashed changes
               <folding>
                 <marker date="1544334551859" expanded="false" signature="6:79" ph="..." />
                 <marker date="1544334551859" expanded="true" signature="115:2274" ph="{...}" />
@@ -300,13 +305,22 @@
       <workItem from="1544219768823" duration="4179000" />
       <workItem from="1544226144006" duration="79000" />
       <workItem from="1544304166787" duration="3949000" />
+<<<<<<< Updated upstream
       <workItem from="1544308519174" duration="187000" />
       <workItem from="1544379741536" duration="107000" />
+=======
+      <workItem from="1544329347381" duration="3722000" />
+      <workItem from="1544333725952" duration="524000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="22681000" />
+=======
+    <option name="totallyTimeSpent" value="26633000" />
+>>>>>>> Stashed changes
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -699,8 +713,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/BossEnemy.cs">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="375">
           <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+=======
+        <state relative-caret-position="477">
+          <caret line="45" column="31" lean-forward="true" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+>>>>>>> Stashed changes
           <folding>
             <marker date="1544379847504" expanded="false" signature="6:93" ph="..." />
             <marker date="1544379847504" expanded="true" signature="133:5560" ph="{...}" />
