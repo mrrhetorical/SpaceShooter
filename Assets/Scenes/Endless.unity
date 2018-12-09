@@ -496,6 +496,7 @@ MonoBehaviour:
   _gameOverObject: {fileID: 996797795}
   GameOverScore: {fileID: 455294578}
   GameOverMessage: {fileID: 638680012}
+  GameOverText: {fileID: 0}
   _menuHolder: {fileID: 0}
   _infoHolder: {fileID: 0}
   _levelSelectHolder: {fileID: 0}
@@ -1112,7 +1113,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2017,7 +2018,7 @@ MonoBehaviour:
     type: 2}
   _bossPrefab: {fileID: 1743850183590618, guid: c7fcc3125025740ce914f0f8affd42ae,
     type: 2}
-  _shootingEnemySpawnChance: 15
+  _shootingEnemySpawnChance: 5
   _minTimeToSpawn: 0.4
   _maxTimeToSpawn: 3
   _horizScreenBounds: {x: -8.5, y: 8.5}
@@ -2356,8 +2357,8 @@ RectTransform:
   m_Father: {fileID: 1914474464}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

@@ -285,4 +285,9 @@ public class Player : MonoBehaviour
 			Damage(3);
 		}
 	}
+
+	public Text GetScoreText()
+	{
+		return _scoreText;
+	}
 }

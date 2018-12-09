@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Vector2 _horizontalSpeed;
     [SerializeField] private Vector2 _verticalSpeed;
 
-    [SerializeField] private Vector2 _speed;
+    [SerializeField] protected Vector2 _speed;
     
     protected int _direction = 1;
     [SerializeField] protected int _health = 2;

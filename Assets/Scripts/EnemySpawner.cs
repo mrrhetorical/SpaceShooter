@@ -11,7 +11,7 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] private GameObject _shootingEnemyPrefab;
     [SerializeField] private GameObject _bossPrefab;
-    [SerializeField] private float _shootingEnemySpawnChance = 40f; //Chance out of 100 for a shooting enemy to spawn.
+    [SerializeField] private float _shootingEnemySpawnChance = 15f; //Chance out of 100 for a shooting enemy to spawn.
     [SerializeField] private float _minTimeToSpawn = 1f;
     [SerializeField] private float _maxTimeToSpawn = 5f;
     [SerializeField] private Vector2 _horizScreenBounds = Vector2.zero;
@@ -60,16 +60,13 @@ public class EnemySpawner : MonoBehaviour
 
                 _maxTimeToSpawn = 1f;
             }
-        }
-    }
 
-    private IEnumerator SpawnEnemyWithWarning(GameObject enemy, Vector3 position)
-    {
-        var warning = Instantiate(_spawnWarning, position, Quaternion.identity, null);
-        yield return new WaitForSeconds(0.4f);
-        Destroy(warning);
-        yield return new WaitForSeconds(0.1f);
-        Instantiate(enemy, position, Quaternion.identity, null);
+            
+            if (_shootingEnemySpawnChance < 35f)
+            {
+                _shootingEnemySpawnChance += 0.075f;
+            }
+        }
     }
 
     private IEnumerator SpawnBosses() {
@@ -86,7 +83,7 @@ public class EnemySpawner : MonoBehaviour
                     spawnPos.x = x;
                     spawnPos.y = y;
 
-                    StartCoroutine(SpawnEnemyWithWarning(_bossPrefab, spawnPos));
+                    Instantiate(_bossPrefab, spawnPos, Quaternion.identity, null);
                     
                     BossSpawned = true;
                 }
@@ -114,7 +111,7 @@ public class EnemySpawner : MonoBehaviour
                 var chance = Random.Range(0, 100);
                 var prefab = chance <= _shootingEnemySpawnChance ? _shootingEnemyPrefab : _enemyPrefab;
 
-                StartCoroutine(SpawnEnemyWithWarning(prefab, spawnPos));
+                Instantiate(prefab, spawnPos, Quaternion.identity, null);
             }
             
             var timeToWait = Random.Range(_minTimeToSpawn, _maxTimeToSpawn);

@@ -12,9 +12,17 @@ public enum EndCondition
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] private EndCondition _endCondition = EndCondition.Time;
-    [SerializeField] private int _timeLimit = 61; //The amount of time that it takes to end the game (if required).
-    [SerializeField] private Text _winText;
+    [SerializeField] private EndCondition _endCondition = EndCondition.Elimination;
+    [SerializeField] private int _timeLimit = 0; //The amount of time that it takes to end the game (if required).
+
+    private void Start()
+    {
+        if (_endCondition == EndCondition.Elimination)
+        {
+            //Disable score text if the mode is elimination.
+            Player.Singleton.GetScoreText().enabled = false;
+        }
+    }
 
     private void Update()
     {
@@ -33,9 +41,11 @@ public class LevelManager : MonoBehaviour
     }
     
     //When the player succeeds
-    private void EndGame()
+    private static void EndGame()
     {
+        Player.Singleton.GetScoreText().enabled = false;
         MenuManager.Singleton.EnableGameOverMenu();
+        MenuManager.Singleton.GameOverText.text = "Congratulations!";
         MenuManager.Singleton.GameOverMessage.text = "You've completed the level!";
         MenuManager.Singleton.GameOverScore.enabled = false;
     }

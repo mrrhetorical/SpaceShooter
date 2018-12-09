@@ -39,18 +39,18 @@ public class ShootingEnemy : Enemy
         {
             var delay = Random.Range(_shootDelay.x, _shootDelay.y);
             var bullet = Instantiate(_bulletPrefab, transform.position, Quaternion.identity, null);
-            StartCoroutine(ApplyBulletForce(bullet));
+            StartCoroutine(ApplyBulletForce(bullet, _bulletSpeed));
             _bulletCount++;
             yield return new WaitForSeconds(delay);
         }
     }
     
-    protected IEnumerator ApplyBulletForce(GameObject bullet)
+    protected IEnumerator ApplyBulletForce(GameObject bullet, float speed)
     {
 	
         while (bullet != null && bullet.transform.position.y > -8f)
         {
-            bullet.transform.Translate(new Vector3(0, Time.deltaTime * _bulletSpeed * -1, 0));
+            bullet.transform.Translate(new Vector3(0, Time.deltaTime * speed * -1, 0));
             yield return null;
         }
 
@@ -83,6 +83,6 @@ public class ShootingEnemy : Enemy
             yield return new WaitForSeconds(1.0f);
         }
         
-        Destroy(this);
+        Destroy(gameObject);
     }
 }

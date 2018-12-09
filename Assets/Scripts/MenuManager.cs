@@ -15,6 +15,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject _gameOverObject;
     [SerializeField] public Text GameOverScore;
     [SerializeField] public Text GameOverMessage;
+    [SerializeField] public Text GameOverText;
 
     [Header("Main Menu Stuff")]
     [SerializeField] private GameObject _menuHolder;

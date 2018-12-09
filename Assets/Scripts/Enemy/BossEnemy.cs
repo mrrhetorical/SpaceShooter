@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -16,25 +17,46 @@ public class BossEnemy : ShootingEnemy
         _spriteRenderer.color = Color.cyan;
     }
 
+    public override void Update()
+    {
+        var movement = Vector3.zero;
+        movement.x = _speed.x;
+        movement.x *= Time.deltaTime;
+        
+        if (transform.position.x > Player.Singleton.transform.position.x)
+        {
+            movement.x *= -1f;
+        }
+        
+        transform.Translate(movement);
+
+//        base.Update();
+    }
+
     public override void BaseKill()
     {
-        var enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        var found = false;
-        
-        foreach (var enemy in enemies)
+
+        if (EnemySpawner.Singleton)
         {
-            if (enemy == gameObject)
-                continue;
-            
-            if (enemy.GetComponent<BossEnemy>())
+            var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            var found = false;
+
+            foreach (var enemy in enemies)
             {
-                found = true;
-                break;
+                if (enemy == gameObject)
+                    continue;
+
+                if (enemy.GetComponent<BossEnemy>())
+                {
+                    found = true;
+                    break;
+                }
             }
+
+
+            EnemySpawner.Singleton.BossSpawned = found;
         }
 
-
-        EnemySpawner.Singleton.BossSpawned = found;
         base.BaseKill();
     }
     
@@ -44,42 +66,52 @@ public class BossEnemy : ShootingEnemy
         yield return new WaitForSeconds(first);
         while (_alive)
         {
-            var delay = Random.Range(_shootDelay.x, _shootDelay.y);
-
-            var rand = Mathf.RoundToInt(Random.Range(0f, 2f));
+            var distance = Mathf.Abs(transform.position.x - Player.Singleton.transform.position.x);
+            var delay = Random.Range(_shootDelay.x, _shootDelay.y); 
             
-            if (rand == 0)
+            if (distance <= 7.5f)
             {
-                var bomb = Instantiate(_bombPrefab, transform.position, Quaternion.identity, null);
-                StartCoroutine(ApplyBombForce(bomb));
-            } else if (rand == 1)
-            {
-                var bullet = Instantiate(_bossBulletPrefab, transform.position, Quaternion.identity, null);
-                StartCoroutine(ApplyBulletForce(bullet));
+                var rand = Mathf.RoundToInt(Random.Range(0f, 2f));
 
-            } else if (rand == 2)
-            {
-                var b1 = Instantiate(_bulletPrefab, transform.position, Quaternion.identity, null);
-                var b2 = Instantiate(b1);
-                var b3 = Instantiate(b2);
+                if (rand == 0)
+                {
+                    var bomb = Instantiate(_bombPrefab, transform.position, Quaternion.identity, null);
+                    StartCoroutine(ApplyBombForce(bomb));
+                }
+                else if (rand == 1)
+                {
+                    var bullet = Instantiate(_bossBulletPrefab, transform.position, Quaternion.identity, null);
+                    StartCoroutine(ApplyBulletForce(bullet, _bulletSpeed));
+                    _bulletCount++;
+                }
+                else if (rand == 2)
+                {
+                    _bulletCount += 3;
+                    var b1 = Instantiate(_bulletPrefab, transform.position, Quaternion.identity, null);
+                    var b2 = Instantiate(b1);
+                    var b3 = Instantiate(b2);
 
-                b2.transform.rotation = Quaternion.Euler(0, 0, 45);
-                b3.transform.rotation = Quaternion.Euler(0, 0, -45);
+                    b2.transform.rotation = Quaternion.Euler(0, 0, 45);
+                    b3.transform.rotation = Quaternion.Euler(0, 0, -45);
 
-                StartCoroutine(ApplyTriShotForce(b1, b2, b3));
+                    StartCoroutine(ApplyBulletForce(b1, _bulletSpeed * 1.5f));
+                    StartCoroutine(ApplyBulletForce(b2, _bulletSpeed * 1.5f));
+                    StartCoroutine(ApplyBulletForce(b3, _bulletSpeed * 1.5f));
+                }
             }
 
-            _bulletCount++;
             yield return new WaitForSeconds(delay);
         }
     }
 
+    [Obsolete("No need for this method with ApplyBulletForce(bullet) existing.")]
     private IEnumerator ApplyTriShotForce(GameObject b1, GameObject b2, GameObject b3)
     {
+        _bulletCount += 3;
         while ((b1 != null && b1.transform.position.y > -6f) || (b2 != null && b2.transform.position.y > -6f) || (b3 != null && b3.transform.position.y > -6f))
         {
             var move = Vector3.zero;
-            move.y = _bulletSpeed * -1;
+            move.y = _bulletSpeed * -1.5f;
             move *= Time.deltaTime;
 
             if (b1 != null)
@@ -114,10 +146,13 @@ public class BossEnemy : ShootingEnemy
         {
             Destroy(b3);
         }
+
+        _bulletCount -= 3;
     }
 
     private IEnumerator ApplyBombForce(GameObject bomb)
     {
+        _bulletCount++;
         var pos = bomb.transform.position;
 
         var traveled = 0f;
