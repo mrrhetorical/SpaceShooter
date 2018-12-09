@@ -38,9 +38,14 @@ public class ShootingEnemy : Enemy
         while (_alive)
         {
             var delay = Random.Range(_shootDelay.x, _shootDelay.y);
-            var bullet = Instantiate(_bulletPrefab, transform.position, Quaternion.identity, null);
-            StartCoroutine(ApplyBulletForce(bullet, _bulletSpeed));
-            _bulletCount++;
+
+            if (transform.position.y < 4.8f)
+            {
+                var bullet = Instantiate(_bulletPrefab, transform.position, Quaternion.identity, null);
+                StartCoroutine(ApplyBulletForce(bullet, _bulletSpeed));
+                _bulletCount++;
+            }
+
             yield return new WaitForSeconds(delay);
         }
     }
