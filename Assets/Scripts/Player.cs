@@ -233,7 +233,7 @@ public class Player : MonoBehaviour
 			_health++;
 			if (_health == 4)
 			{
-				GetComponent<SpriteRenderer>().color = new Color(0, 0.5f, 1f, 1);
+				GetComponent<SpriteRenderer>().color = new Color(0, 0.5f, 1, 1);
 			}
 
 			StartCoroutine(UpdateHealthDisplay(_health));
@@ -246,7 +246,7 @@ public class Player : MonoBehaviour
 		TakingDamage = true;
 		
 		var heart = _interfaceHearts[heartToDamage - 1];
-		var heartRenderer = heart.GetComponent<SpriteRenderer>();
+		var heartRenderer = heart.GetComponent<Image>();
 		var playerRenderer = GetComponent<SpriteRenderer>();
 		for (var i = 0; i < 3; i++)
 		{
@@ -289,5 +289,10 @@ public class Player : MonoBehaviour
 	public Text GetScoreText()
 	{
 		return _scoreText;
+	}
+
+	public int GetHealth()
+	{
+		return _health;
 	}
 }
